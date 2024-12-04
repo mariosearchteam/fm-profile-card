@@ -1,0 +1,156 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+/* variables */
+
+:root {
+  /* colors */
+  --clr-cyan-500: hsl(185, 75%, 39%);
+  --clr-blue-900: hsl(229, 23%, 23%);
+  --clr-blue-500: hsl(227, 10%, 46%);
+  --clr-neutral-500: hsl(0, 0%, 59%);
+  --clr-neutral-500-50: hsla(0, 0%, 59%, 0.5);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-900: hsl(0, 0%, 0%);
+  /* font */
+  --ff-body: "Kumbh Sans", sans-serif;
+  --fw-400: 400;
+  --fw-700: 700;
+  /* font size */
+  --fs-body: 18px;
+  --fs-200: 1.2rem;
+
+  /* spacer */
+  --spacer: 2rem;
+  --spacer-sm: 1rem;
+  --spacer-lg: 3rem;
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  line-height: 1.2;
+  color: vaR(--clr-blue-900);
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  line-height: 1.6;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-400);
+  color: var(--clr-neutral-500);
+}
+
+/* Utility classes */
+.flow-content > * + * {
+  margin-top: var(--flow-space, var(--spacer));
+}
+
+.split {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* general styles */
+main {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: url("./images/bg-pattern-top.svg"),
+    url("./images/bg-pattern-bottom.svg"), var(--clr-cyan-500);
+  background-size: auto, auto;
+  background-repeat: no-repeat, no-repeat;
+  background-position: top -50ch left -50ch, bottom -50ch right -50ch;
+}
+.card {
+  background-color: var(--clr-neutral-100);
+  border-radius: var(--spacer-sm);
+  min-width: 20rem;
+  max-width: 24rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  &__header__bg {
+    display: grid;
+    place-items: center;
+    height: 13rem;
+    background: url("./images/bg-pattern-card.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    border-top-left-radius: var(--spacer-sm);
+    border-top-right-radius: var(--spacer-sm);
+  }
+  &__img {
+    margin: var(--spacer-lg) auto 0;
+    border-radius: 50%;
+    border: 5px solid var(--clr-neutral-100);
+  }
+  &__info {
+    padding: 0 var(--spacer-lg) var(--spacer-sm);
+    border-bottom: 1px solid var(--clr-neutral-500-50);
+    & .split {
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+  &__name {
+    font-size: var(--fs-200);
+  }
+  &__age {
+    font-size: var(--fs-200);
+  }
+  &__location {
+    font-size: 0.9125rem;
+  }
+  &__stats {
+    padding: var(--spacer-sm) var(--spacer-lg);
+    &__number {
+      font-size: 1.1rem;
+    }
+    &__label {
+      font-size: 0.6rem;
+      letter-spacing: 0.12rem;
+      font-weight: var(--fw-700);
+      padding-top: 0.25rem;
+    }
+  }
+}
